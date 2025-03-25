@@ -1,4 +1,4 @@
-# frontend.py
+# frontend.py (updated user_id handling)
 import streamlit as st
 import requests
 import logging
@@ -13,14 +13,17 @@ def main():
         st.session_state.messages = []
     if "dialogue_styles" not in st.session_state:
         st.session_state.dialogue_styles = {}
-    if "user_id" not in st.session_state:
-        st.session_state.user_id = st.text_input("Enter your User ID (e.g., your name):", "Anonymous")
     if "last_prompt" not in st.session_state:
-        st.session_state.last_prompt = None  # Track the last processed prompt
+        st.session_state.last_prompt = None
 
-    st.title("Emotion-Aware Chat with Fictional Characters 💬")
+    # User ID input - always update session state
+    user_id_input = st.text_input("Enter your User ID (e.g., your name):", value="Anonymous", key="user_id_input")
+    st.session_state.user_id = user_id_input  # Update user_id on every change
+
+    st.title("Timeless-Talks: Emotion-Aware Chat with Fictional Characters 🗣️")
     st.write("Upload a fictional text (PDF or TXT), adjust emotion parameters, and chat with characters!")
-    
+    st.write("Note: Backend must be running at http://localhost:5000 (run `python backend.py`).")
+
     # File upload section
     uploaded_file = st.file_uploader("Upload a Fiction (PDF or TXT)", type=["pdf", "txt"])
     if uploaded_file is not None and not st.session_state.dialogue_styles:
@@ -75,7 +78,7 @@ def main():
     # Chat logic
     if st.session_state.dialogue_styles and character:
         prompt = st.chat_input("Enter your topic or question:", key="chat_input")
-        if prompt and prompt != st.session_state.last_prompt:  # Only process new prompts
+        if prompt and prompt != st.session_state.last_prompt:
             logger.debug(f"New prompt detected: {prompt}")
             st.session_state.last_prompt = prompt
             st.session_state.messages.append({"role": "user", "content": prompt})
@@ -83,7 +86,7 @@ def main():
                 st.markdown(prompt)
 
             payload = {
-                "user_id": st.session_state.user_id,
+                "user_id": st.session_state.user_id,  # This should now be "app"
                 "character": character,
                 "prompt": prompt,
                 "dialogue_styles": st.session_state.dialogue_styles,
