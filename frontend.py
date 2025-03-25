@@ -20,7 +20,7 @@ def main():
     user_id_input = st.text_input("Enter your User ID (e.g., your name):", value="Anonymous", key="user_id_input")
     st.session_state.user_id = user_id_input  # Update user_id on every change
 
-    st.title("Timeless-Talks: Emotion-Aware Chat with Fictional Characters 🗣️")
+    st.title("Emotion-Aware Chat with Fictional Characters💬 ")
     st.write("Upload a fictional text (PDF or TXT), adjust emotion parameters, and chat with characters!")
     
 
