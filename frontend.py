@@ -22,7 +22,7 @@ def main():
 
     st.title("Timeless-Talks: Emotion-Aware Chat with Fictional Characters 🗣️")
     st.write("Upload a fictional text (PDF or TXT), adjust emotion parameters, and chat with characters!")
-    st.write("Note: Backend must be running at http://localhost:5000 (run `python backend.py`).")
+    
 
     # File upload section
     uploaded_file = st.file_uploader("Upload a Fiction (PDF or TXT)", type=["pdf", "txt"])
