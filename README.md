@@ -17,6 +17,7 @@ Welcome to **Emotion-Aware Chat**, an interactive application that lets you chat
 
 - **Python 3.9+**: Ensure you have a compatible Python version installed.
 - **Dependencies**: Listed in `requirements.txt`.
+- **GROQ API KEY**: Add API key in .env file.
 
 ## Installation
 
@@ -54,6 +55,7 @@ Welcome to **Emotion-Aware Chat**, an interactive application that lets you chat
 emotion-chat/
 ├── frontend.py       # Streamlit frontend for user interaction
 ├── backend.py        # Flask backend with emotional model and API
+├── config.py         # Loads Groq API key from .env
 ├── database.py       # SQLite database functions
 ├── requirements.txt  # Project dependencies
 └── chat_history.db   # SQLite database (generated at runtime)
@@ -61,12 +63,12 @@ emotion-chat/
 ## Dependencies
 Listed in requirements.txt:
 
-- streamlit: Frontend framework.
-- flask: Backend API server.
-- requests: HTTP client for frontend-backend communication.
-- langchain-groq: Language model integration.
-- langchain-community: Document loaders.
-- pypdf: PDF parsing.
-- sqlite3: Database support.
-- textblob: Sentiment analysis.
+- **streamlit**: Frontend framework.
+- **flask**: Backend API server.
+- **requests**: HTTP client for frontend-backend communication.
+- **langchain-groq**: Language model integration.
+- **langchain-community**: Document loaders.
+- **pypdf**: PDF parsing.
+- **sqlite3**: Database support.
+- **textblob**: Sentiment analysis.
 
