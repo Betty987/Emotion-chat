@@ -70,12 +70,12 @@ with st.sidebar:
 
     if character:
         st.write(f"**Character Profile:** {st.session_state.dialogue_styles[character]}")
-    st.write(f"**Valence:** {valence}")
-    st.write(f"**Arousal:** {arousal}")
-    st.write(f"**Selection Threshold:** {selection_threshold}")
-    st.write(f"**Resolution Level:** {resolution}")
-    st.write(f"**Goal-Directedness:** {goal_directedness}")
-    st.write(f"**Securing Rate:** {securing_rate}")
+    # st.write(f"**Valence:** {valence}")
+    # st.write(f"**Arousal:** {arousal}")
+    # st.write(f"**Selection Threshold:** {selection_threshold}")
+    # st.write(f"**Resolution Level:** {resolution}")
+    # st.write(f"**Goal-Directedness:** {goal_directedness}")
+    # st.write(f"**Securing Rate:** {securing_rate}")
 
 # Display current session messages
 for message in st.session_state.messages:
@@ -109,7 +109,7 @@ if st.session_state.dialogue_styles and character:
 
             with st.chat_message("assistant"):
                 st.markdown(ai_response)
-                st.write(f"😡Anger: {anger} | 😢 Sadness: {sadness} | 😀 Joy: {joy}")
+                st.write(f"Anger: {anger} | Sadness: {sadness} | Joy: {joy}")
             st.session_state.messages.append({
                 "role": "assistant",
                 "content": ai_response,
