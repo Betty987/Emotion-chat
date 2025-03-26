@@ -1,5 +1,3 @@
-
-
 from flask import Flask, request, jsonify
 from langchain_groq import ChatGroq
 from langchain_community.document_loaders import PyPDFLoader, TextLoader
