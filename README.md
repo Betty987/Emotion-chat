@@ -2,6 +2,8 @@
 
 Welcome to **Emotion-Aware Chat**, an interactive application that lets you chat with fictional characters from uploaded texts (PDF or TXT files). The characters respond with emotions—anger, sadness, and joy—based on slider settings and the sentiment of your messages. Built with a Streamlit frontend, Flask backend, and SQLite database, this project combines natural language processing, sentiment analysis, and a custom emotional model for a dynamic chat experience.
 
+![index Preview](./assets/frontpage.png)  
+
 ## Features
 
 - **Upload Fictional Texts**: Analyze PDF or TXT files to extract characters and their speaking styles.
@@ -48,21 +50,23 @@ Welcome to **Emotion-Aware Chat**, an interactive application that lets you chat
 
 
 ## Project Structure
+```
 emotion-chat/
 ├── frontend.py       # Streamlit frontend for user interaction
 ├── backend.py        # Flask backend with emotional model and API
 ├── database.py       # SQLite database functions
 ├── requirements.txt  # Project dependencies
 └── chat_history.db   # SQLite database (generated at runtime)
-
+```
 ## Dependencies
 Listed in requirements.txt:
 
-streamlit: Frontend framework.
-flask: Backend API server.
-requests: HTTP client for frontend-backend communication.
-langchain-groq: Language model integration.
-langchain-community: Document loaders.
-pypdf: PDF parsing.
-sqlite3: Database support.
-textblob: Sentiment analysis.
+- streamlit: Frontend framework.
+- flask: Backend API server.
+- requests: HTTP client for frontend-backend communication.
+- langchain-groq: Language model integration.
+- langchain-community: Document loaders.
+- pypdf: PDF parsing.
+- sqlite3: Database support.
+- textblob: Sentiment analysis.
+
