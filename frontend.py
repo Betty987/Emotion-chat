@@ -82,7 +82,7 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
         if message["role"] == "assistant" and "anger" in message and "sadness" in message and "joy" in message:
-            st.write(f"Anger: {message['anger']} | Sadness: {message['sadness']} | Joy: {message['joy']}")
+            st.write(f"😡 Anger: {message['anger']} | 😢 Sadness: {message['sadness']} | 😀 Joy: {message['joy']}")
 
 # User input and chat logic
 if st.session_state.dialogue_styles and character:
